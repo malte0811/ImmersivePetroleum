@@ -1,0 +1,17 @@
+{
+  "autoload_priority": 2,
+  "immersivepetroleum:main": {
+    "entry_list": [
+      "immersivepetroleum:pumpjack",
+      "immersivepetroleum:cokerunit",
+      "immersivepetroleum:hydrotreater",
+      "immersivepetroleum:lubricant",
+      "immersivepetroleum:asphalt",
+      "immersivepetroleum:projector",
+      "immersivepetroleum:speedboat",
+      "immersivepetroleum:napalm",
+      "immersivepetroleum:portablegenerator",
+      "immersivepetroleum:automaticlubricator"
+    ]
+  }
+}
