@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import blusunrize.immersiveengineering.api.fluid.FluidUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.collect.ImmutableSet;
@@ -330,10 +331,10 @@ public class CokerUnitTileEntity extends PoweredMultiblockTileEntity<CokerUnitTi
 		
 		if(this.bufferTanks[TANK_OUTPUT].getFluidAmount() > 0){
 			if(!getInventory(Inventory.OUTPUT_EMPTY).isEmpty()){
-				ItemStack filledContainer = Utils.fillFluidContainer(this.bufferTanks[TANK_OUTPUT], getInventory(Inventory.OUTPUT_EMPTY), getInventory(Inventory.OUTPUT_FILLED), null);
+				ItemStack filledContainer = FluidUtils.fillFluidContainer(this.bufferTanks[TANK_OUTPUT], getInventory(Inventory.OUTPUT_EMPTY), getInventory(Inventory.OUTPUT_FILLED), null);
 				if(!filledContainer.isEmpty()){
 					
-					if(getInventory(Inventory.OUTPUT_FILLED).getCount() == 1 && !Utils.isFluidContainerFull(filledContainer)){
+					if(getInventory(Inventory.OUTPUT_FILLED).getCount() == 1 && !FluidUtils.isFluidContainerFull(filledContainer)){
 						setInventory(Inventory.OUTPUT_FILLED, filledContainer.copy());
 					}else{
 						if(!getInventory(Inventory.OUTPUT_FILLED).isEmpty() && ItemHandlerHelper.canItemStacksStack(getInventory(Inventory.OUTPUT_FILLED), filledContainer)){
